@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="./styling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/Game.js"></script>
+    <script type="text/javascript" src="./js/Board.js"></script>
+    <script type="text/javascript" src="./js/Human.js"></script>
+    <script type="text/javascript" src="./js/Ai.js"></script>
+  </head>
+  <body>
+    <h1>TicTacToe</h1>
+    <br>
+    <div id="main_menu">
+      <h2>Main Menu</h2>
+      <button id="menu_button" onClick="setupGame('HvH')">Human vs Human</button><br />
+      <button id="menu_button" onClick="setupGame('HvA')">Human vs AI</button><br />
+      <button id="menu_button" onClick="setupGame('AvA')">AI vs AI</button><br />
+    </div>
+    <div id="game_page">
+      <h2 id="game_header"></h2>
+      <div id="game_grid">
+        <button id="0" onClick="playMove('0')"> </button>
+        <button id="1" onClick="playMove('1')"> </button>
+        <button id="2" onClick="playMove('2')"> </button><br>
+        <button id="3" onClick="playMove('3')"> </button>
+        <button id="4" onClick="playMove('4')"> </button>
+        <button id="5" onClick="playMove('5')"> </button><br>
+        <button id="6" onClick="playMove('6')"> </button>
+        <button id="7" onClick="playMove('7')"> </button>
+        <button id="8" onClick="playMove('8')"> </button>
+      </div>
+    </div>
+    <div id="results_page">
+      <h1>Game Over!</h1>
+      <h2 id="result"></h2>
+      <button onClick="playAgain()">Again!</button>
+      <button onClick="mainMenu()">Main Menu</button>
+    </div>
+  </body>
+</html>
