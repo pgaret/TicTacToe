@@ -7,16 +7,18 @@ class Game {
       this.player2 = new Human("O", "Player 2")
     }
     else if (type==="HvA"){
-      this.player1 = new Ai("X")
-      this.player2 = new Human("O")
-      this.player1.makeMove(this.board.layout)
+      this.player1 = new Ai("X", "Player 1")
+      this.player2 = new Human("O", "Player 2")
     }
     else {
-      this.player1 = new Ai("X")
-      this.player2 = new Ai("O")
-      this.player1.makeMove(this)
+      this.player1 = new Ai("X", "Player 1")
+      this.player2 = new Ai("O", "Player 2")
     }
+
     this.current_player = this.player1
+    if (this.player1.type === "A"){
+      setTimeout(()=>{this.takeTurn(this.current_player.getMove(this.board)), 1})
+    }
   }
 
   takeTurn(space){
@@ -32,6 +34,7 @@ class Game {
   }
 
   switchPlayer(){
+    // debugger
     if (this.current_player === this.player1) {
       this.current_player = this.player2
     }
@@ -39,12 +42,12 @@ class Game {
       this.current_player = this.player1
     }
     if (this.current_player.type === 'A'){
-      // this.current_player.makeMove(this)
+      setTimeout(()=>{this.takeTurn(this.current_player.getMove(this.board)), 250})
     }
   }
 
   handleEnding(){
-    $("#game_page").css("display", "none")
+    // $("#game_page").css("display", "none")
     $("#results_page").css("display", "block")
     if (this.board.check_for_victory()){
       $("#result").text(this.current_player.which_player+" wins!")

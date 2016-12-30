@@ -24,7 +24,8 @@ class Board {
     || (this.layout[2] !== '' && this.layout[2] == this.layout[5] && this.layout[5] == this.layout[8])
         //Check the diagonals
     || (this.layout[0] !== '' && this.layout[0] == this.layout[4] && this.layout[4] == this.layout[8])
-    || (this.layout[2] !== '' && this.layout[2] == this.layout[4] && this.layout[4] == this.layout[6])){
+    || (this.layout[2] !== '' && this.layout[2] == this.layout[4] && this.layout[4] == this.layout[6]))
+    {
       return true
     }
     else {
@@ -50,9 +51,9 @@ class Board {
   }
 
   set_space(space, token){
+    let ids = ["#first", "#second", "#third", "#fourth", "#fifth", "#sixth", "#seventh", "#eighth", "#ninth"]
     this.layout[space] = token
-    space = "#"+space
-    $(space)[0].disabled = true
-    $(space)[0].innerHTML = token
+    $(ids[space])[0].disabled = true
+    $(ids[space])[0].innerHTML = token
   }
 }
