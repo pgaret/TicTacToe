@@ -26,12 +26,18 @@
     </div>
     <div id="game_page">
       <h2 id="game_header"></h2>
-      <h3>Switch: </h3>
       <form id="HVA" onChange="switchMode()">
+        <h3>Switch: </h3>
         <input type="radio" name="player" value="player1" checked>Player 1
         <input type="radio" name="player" value="player2">Player 2
       </form>
       <button id="pause_button" onClick="pauseGame()">Pause</button>
+      <div id="results_page">
+        <h1>Game Over!</h1>
+        <h2 id="result"></h2>
+        <button onClick="playAgain()">Again!</button>
+        <button onClick="mainMenu()">Main Menu</button>
+      </div>
       <div class="game_grid">
         <button id="first" class="0" onClick="playMove('0')">&nbsp</button>
         <button id="second" class="1" onClick="playMove('1')">&nbsp</button>
@@ -43,12 +49,6 @@
         <button id="eighth" class="7" onClick="playMove('7')">&nbsp</button>
         <button id="ninth" class="8" onClick="playMove('8')">&nbsp</button>
       </div>
-    </div>
-    <div id="results_page">
-      <h1>Game Over!</h1>
-      <h2 id="result"></h2>
-      <button onClick="playAgain()">Again!</button>
-      <button onClick="mainMenu()">Main Menu</button>
     </div>
   </body>
 </html>

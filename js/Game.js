@@ -8,7 +8,6 @@ class Game {
       this.player2 = new Human("O", "Player 2")
     }
     else if (type==="HvA"){
-      console.log($("input[name='player']:checked")[0].value)
       if ($("input[name='player']:checked")[0].value === "player1"){
         this.player1 = new Human("X", "Player 1")
         this.player2 = new Ai("O", "Player 2")
@@ -45,7 +44,7 @@ class Game {
           if (this.game_type === "AvA"){
             // debugger
             // console.log(this.game_type)
-            setTimeout(()=>{this.switchPlayer()}, 750)
+            setTimeout(()=>{this.switchPlayer()}, 500)
           }
           else {
             this.switchPlayer()
@@ -64,13 +63,14 @@ class Game {
       this.current_player = this.player1
     }
     if (this.current_player.type === 'A'){
-      setTimeout(()=>{this.takeTurn(this.current_player.getMove(this.board))}, 250)
+      this.takeTurn(this.current_player.getMove(this.board))
     }
   }
 
   handleEnding(){
     // $("#game_page").css("display", "none")
     $("#results_page").css("display", "block")
+    $("#pause_button").css("display", "none")
     if (this.board.check_for_victory()){
       $("#result").text(this.current_player.which_player+" wins!")
     }

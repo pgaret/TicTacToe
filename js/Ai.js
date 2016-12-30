@@ -9,7 +9,9 @@ class Ai {
 
   getMove(board, sum){
     let forced_move = this.checkOpportunities(board.layout)
-    if (forced_move){return forced_move}
+    if (forced_move){
+      return forced_move
+    }
     let results = []
     for (let i = 0; i < board.layout.length; i++){
       if (board.layout[i] === ""){
@@ -22,10 +24,12 @@ class Ai {
         results.push(-1000000)
       }
     }
-    // debugger
-    let move = results.indexOf(Math.max.apply(null, results))
-    // console.log(move+" "+results)
-    return move
+    let min_index = Math.max.apply(null, results)
+    let options = []
+    for (let i = 0; i < results.length; i++){
+      if (results[i] === min_index) {options.push(i)}
+    }
+    return options[Math.floor(Math.random()*options.length)]
   }
 
   rootScan(board, sum, depth){
@@ -62,10 +66,11 @@ class Ai {
         if (board[i] && board[i] === board[i-1] && !board[i+1]){return i+1}
         if (board[i] && board[i] === board[i+1] && !board[i-1]){return i-1}
       }
-      if (i > 2){
+      if (i > 2 && i < 6){
         if (board[i] && board[i] === board[i-3] && !board[i+3]){return i+3}
         if (board[i] && board[i] === board[i+3] && !board[i-3]){return i-3}
       }
+
     }
     if (board[4] !== ''){
       if (board[4] && board[4] === board[0] && !board[8]){return 8}
@@ -73,7 +78,7 @@ class Ai {
       if (board[4] && board[4] === board[6] && !board[2]){return 2}
       if (board[4] && board[4] === board[8] && !board[0]){return 0}
       if (board[0] && board[8] && !board[4]){return 4}
-      if (board[2] && board[6] && !board[4]){return 0}
+      if (board[2] && board[6] && !board[4]){return 4}
     }
     return false
   }
