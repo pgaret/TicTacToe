@@ -24,6 +24,8 @@ function resetBoard(){
     $("."+i)[0].disabled = false
     $("."+i)[0].innerHTML = '&nbsp'
   }
+  $("#pause_button").visibility = "hidden"
+  $("#HVA").css("display", "none")
 }
 
 function mainMenu(){
@@ -31,4 +33,12 @@ function mainMenu(){
   $("#game_page").css("display", "none")
   $("#results_page").css("display", "none")
   resetBoard()
+}
+
+function pauseGame(){
+  game.paused = !game.paused
+}
+
+function switchMode(event){
+  playAgain()
 }

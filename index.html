@@ -26,6 +26,12 @@
     </div>
     <div id="game_page">
       <h2 id="game_header"></h2>
+      <h3>Switch: </h3>
+      <form id="HVA" onChange="switchMode()">
+        <input type="radio" name="player" value="player1" checked>Player 1
+        <input type="radio" name="player" value="player2">Player 2
+      </form>
+      <button id="pause_button" onClick="pauseGame()">Pause</button>
       <div class="game_grid">
         <button id="first" class="0" onClick="playMove('0')">&nbsp</button>
         <button id="second" class="1" onClick="playMove('1')">&nbsp</button>

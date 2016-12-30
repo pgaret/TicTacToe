@@ -26,6 +26,10 @@ h1,h2{
   text-align: center;
 }
 
+#HVA{
+  display:none;
+}
+
 #results_page {
   display: none;
   margin: 0 auto;
@@ -75,7 +79,6 @@ h1,h2{
   border-bottom-width: 5px;
 
   margin-left: -.75%;
-
 }
 
 #fourth{
@@ -98,7 +101,6 @@ h1,h2{
   border-right-width: 5px;
 
   margin-left: -.75%;
-
 }
 
 #sixth{
@@ -107,14 +109,12 @@ h1,h2{
   border-bottom-width: 5px;
 
   margin-left: -.75%;
-
 }
 
 #seventh{
   border-right-color: black;
   border-right-style: solid;
   border-right-width: 5px;
-
 }
 
 #eighth{
@@ -123,10 +123,8 @@ h1,h2{
   border-right-width: 5px;
 
   margin-left: -.75%;
-
 }
 
 #ninth{
   margin-left: -.75%;
-
 }
