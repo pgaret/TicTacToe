@@ -7,17 +7,18 @@ h1,h2{
   text-align: center;
 
   width: 50%;
-  background-color: grey;
-  border-radius: 15px;
 }
 
 #menu_button {
-  font-size: 36px;
-  background-color: lightgrey;
+  font-size: 200%;
 }
 
 #menu_button:hover{
-  background-color: grey;
+}
+
+#pause_button{
+  text-align: center;
+  margin: 0 auto;
 }
 
 #game_page {
@@ -50,6 +51,8 @@ h1,h2{
   width: 100px;
   height: 100px;
 }
+
+/* Styling that makes the gameboard look nice */
 
 #first{
   border-bottom-color: black;

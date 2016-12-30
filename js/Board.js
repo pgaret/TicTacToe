@@ -32,6 +32,8 @@ class Board {
       return false
     }
   }
+
+  //If the board's full and there's no winner, must be a draw
   check_for_draw(){
     if (this.check_for_victory() === false &&
         this.layout.filter(coordinate=>{return coordinate === ''}).length === 0) {
@@ -41,15 +43,9 @@ class Board {
       return false
     }
   }
-  is_space_valid(space){
-    if (this.layout[space] === '') {
-      return true
-    }
-    else {
-      return false
-    }
-  }
 
+  //Ids can't be numerical so we have these lovely strings for them instead
+  //Takes the place for the current player
   set_space(space, token){
     let ids = ["#first", "#second", "#third", "#fourth", "#fifth", "#sixth", "#seventh", "#eighth", "#ninth"]
     this.layout[space] = token
