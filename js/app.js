@@ -6,6 +6,7 @@ function setupGame(gameType){
   game = new Game(gameType)
   $("#main_menu").css("display", "none")
   $("#game_page").css("display", "block")
+  if (gameType !== "AvA") {$("#pause_button").css("display", "none")}
 }
 
 function playMove(space){

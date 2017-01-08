@@ -47,6 +47,7 @@ class Board {
   //Ids can't be numerical so we have these lovely strings for them instead
   //Takes the place for the current player
   set_space(space, token){
+    // debugger
     let ids = ["#first", "#second", "#third", "#fourth", "#fifth", "#sixth", "#seventh", "#eighth", "#ninth"]
     this.layout[space] = token
     $(ids[space])[0].disabled = true
