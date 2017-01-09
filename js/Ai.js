@@ -19,10 +19,10 @@ class Ai {
         return [0, "draw"]
       }
       else if (board.check_for_victory() && this.token === other_token){
-        return [10, "win"]
+        return [10 - depth, "win"]
       }
       else {
-        return [-10, "loss"]
+        return [depth - 10, "loss"]
       }
     }
     let nextVal = null
