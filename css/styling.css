@@ -31,6 +31,12 @@ h1,h2{
   display:none;
 }
 
+#testResults {
+  display: none;
+  text-align: center;
+  font-size: 36px;
+}
+
 #results_page {
   margin: 0 auto;
   text-align: center;

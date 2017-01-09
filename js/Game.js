@@ -38,12 +38,12 @@ class Game {
       let results = []
       this.current_player = this.player1
       this.testAIP1(this.board, results)
-      console.log("AI (P1): "+results[1]+" Human: "+results[2]+" Draw: "+results[0])
-      // console.log(rsesults)
+      let str = "AI (P1): "+results[1]+" Human: "+results[2]+" Draw: "+results[0]
+      $("#testResults").append(str+"<br>")
       results = []
       this.testAIP2(this.board, results)
-      // console.log(results)
-      console.log("AI (P2): "+results[2]+" Human: "+results[1]+" Draw: "+results[0])
+      str = "AI (P2): "+results[2]+" Human: "+results[1]+" Draw: "+results[0]
+      $("#testResults").append(str)
       $("#again").css("display", "block")
     }
 
