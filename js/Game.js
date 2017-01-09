@@ -39,11 +39,12 @@ class Game {
       this.current_player = this.player1
       this.testAIP1(this.board, results)
       console.log("AI (P1): "+results[1]+" Human: "+results[2]+" Draw: "+results[0])
-      // console.log(results)
+      // console.log(rsesults)
       results = []
       this.testAIP2(this.board, results)
       // console.log(results)
       console.log("AI (P2): "+results[2]+" Human: "+results[1]+" Draw: "+results[0])
+      $("#again").css("display", "block")
     }
 
     this.current_player = this.player1
@@ -89,6 +90,7 @@ class Game {
   handleEnding(){
     //Mostly, show results and hide in-game options
     $("#results_page").css("display", "block")
+    $("#again").css("display", "block")
     $("#pause_button").css("display", "none")
     $("#HVA").css("display", "none")
     //If there was a victor, congratulate them. Otherwise don't.
